@@ -1,0 +1,14 @@
+<<<<<<<<<<USER>>>>>>>>>>>
+Quais dados do usuário são importantes?
+Como verificaremos se o usuário é alguem bem intencionado? 
+O usuário poderá excluir sua conta?
+
+<<<<<<<<<<RESERVA>>>>>>>
+O user poderá escolher qual máquina ele irá usar (nome, tipo: Efigênia etc)?
+Quantas reservas podem ser feitas pelo mesmo user no tempo de 1 semana?
+O user pode reservar por dias seguidos?
+O user pode cancelar uma reserva?
+A reserva será aprovada imediatamente ou passará por uma revisão de um adm?
+Os preços pela reserva serão calculados pelo código com base nas horas de uso ou um adm definirá o preço?
+Poderá haver acréscimos ou descontos?
+Desde que hora até que hora o user pode reservar uma máquina?
