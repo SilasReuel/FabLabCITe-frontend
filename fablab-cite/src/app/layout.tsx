@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { Theme } from "@radix-ui/themes";
 
 export const metadata: Metadata = {
   title: "FabLab - CITe",
@@ -14,7 +15,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body>
-        {children}
+        <Theme appearance="dark">{children}</Theme>
       </body>
     </html>
   );
