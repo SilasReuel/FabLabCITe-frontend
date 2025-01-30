@@ -1,11 +1,9 @@
-import { UsersService } from "@/services/Users/users";
+import Link from "next/link";
 
 export default function Home() {
-  UsersService.fetchUsers()
-
   return (
     <>
-      <h1>Usuários</h1>
+      <Link href="./admin/userDashboard">Dashboard</Link>
     </>
   );
 }

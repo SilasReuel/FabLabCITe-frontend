@@ -9,9 +9,7 @@ interface UsersContextType {
   deleteUser: (id: number) => Promise<void>;
 }
 
-export const UsersContext = createContext<UsersContextType | undefined>(
-  {} as UsersContextType
-);
+export const UsersContext = createContext({} as UsersContextType);
 
 export const UsersContextProvider: React.FC<{ children: ReactNode }> = ({
   children,
@@ -39,10 +37,12 @@ export const UsersContextProvider: React.FC<{ children: ReactNode }> = ({
   const deleteUser = async (id: number) => {
     await UsersService.deleteUser(id);
     setUsers(users.filter((user) => user.id !== id));
-  }
+  };
 
   return (
-    <UsersContext.Provider value={{ users, createUser, updateUser, deleteUser }}>
+    <UsersContext.Provider
+      value={{ users, createUser, updateUser, deleteUser }}
+    >
       {children}
     </UsersContext.Provider>
   );
