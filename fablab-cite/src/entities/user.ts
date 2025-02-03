@@ -1,4 +1,4 @@
-export type UserType = "usuario" | "aluno" | "admin"
+import { userType } from "@/types/userType";
 
 export interface User {
     id: number,
@@ -7,5 +7,5 @@ export interface User {
     email: string,
     cpf: string,
     dataNascimento: Date,
-    tipo: UserType
+    tipo: userType
 }

@@ -42,3 +42,6 @@ next-env.d.ts
 
 #regras
 regras.txt
+
+machines.ts
+machine.ts
