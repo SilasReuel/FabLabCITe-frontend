@@ -1,18 +1,13 @@
 "use client";
 
+import BtnRemove from "@/components/btnRemove";
+import BtnUpdate from "@/components/btnUpdate";
 import { User } from "@/entities/user";
 import { useUsers } from "@/hooks/useUsers";
-import { Button, Container, Table } from "@radix-ui/themes";
+import { Container, Flex, Table } from "@radix-ui/themes";
 
 export default function Page() {
-  const { users = [], deleteUser } = useUsers() || {};
-
-  const handleRemove = (id: number) => {
-    const confirmation = confirm("Deseja realmente excluir este usuário?");
-    if (confirmation) {
-      deleteUser(id);
-    }
-  };
+  const {users = []} = useUsers() || {};
 
   return (
     <Container size={"4"} mt={"5"}>
@@ -24,6 +19,7 @@ export default function Page() {
             <Table.ColumnHeaderCell>CPF</Table.ColumnHeaderCell>
             <Table.ColumnHeaderCell>Data de nascimento</Table.ColumnHeaderCell>
             <Table.ColumnHeaderCell>Tipo</Table.ColumnHeaderCell>
+            <Table.ColumnHeaderCell> </Table.ColumnHeaderCell>
           </Table.Row>
         </Table.Header>
         <Table.Body>
@@ -37,7 +33,10 @@ export default function Page() {
               </Table.Cell>
               <Table.Cell>{user.tipo}</Table.Cell>
               <Table.Cell>
-                <Button color="tomato" variant="soft" size={"2"} radius="small" onClick={() => handleRemove(user.id)}>Remover</Button>
+                <Flex gap="1">
+                  <BtnRemove user={user} />
+                  <BtnUpdate user={user} />
+                </Flex>
               </Table.Cell>
             </Table.Row>
           ))}

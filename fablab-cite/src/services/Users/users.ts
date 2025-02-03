@@ -2,7 +2,6 @@ import { User } from "@/entities/user";
 
 const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 
-
 export const UsersService = {
   async fetchUsers(): Promise<User[]> {
     try {
