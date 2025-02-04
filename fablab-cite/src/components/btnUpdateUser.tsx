@@ -75,7 +75,7 @@ export default function BtnUpdate(props: { user: User }) {
             </DataList.Item>
             <DataList.Item>
               <DataList.Label minWidth="88px">Nome</DataList.Label>
-              <DataList.Value>{user.name}</DataList.Value>
+              <DataList.Value>{user.nome}</DataList.Value>
             </DataList.Item>
             <DataList.Item>
               <DataList.Label minWidth="88px">Email</DataList.Label>

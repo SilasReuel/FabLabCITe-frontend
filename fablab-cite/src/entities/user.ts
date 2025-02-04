@@ -2,10 +2,10 @@ import { userType } from "@/types/userType";
 
 export interface User {
     id: number,
-    name: string,
+    nome: string,
     senha: string,
     email: string,
     cpf: string,
-    dataNascimento: Date,
+    dataNascimento: string,
     tipo: userType
 }

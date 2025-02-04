@@ -1,3 +1,5 @@
+"use client"
+
 import { User } from "@/entities/user";
 import { UsersService } from "@/services/Users/users";
 import { ReactNode, useState, createContext, useEffect } from "react";
