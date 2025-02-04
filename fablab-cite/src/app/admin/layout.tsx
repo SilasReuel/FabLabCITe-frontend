@@ -3,7 +3,8 @@
 import { useRouter } from "next/navigation"; // Importando useRouter
 import { Box, Container, Heading, Tabs, Text } from "@radix-ui/themes";
 import { UsersContextProvider } from "@/contexts/UsersContext";
-import {  useState } from "react";
+import { useState } from "react";
+import { MachinesContextProvider } from "@/contexts/MachinesContext";
 
 export default function Layout({
   children,
@@ -32,26 +33,32 @@ export default function Layout({
 
   return (
     <UsersContextProvider>
-      <Container size={"4"} hidden={false}>
-        <Heading mt={"5"} ml={"3"}>
-          DASHBOARD
-        </Heading>
+      <MachinesContextProvider>
+        <Container size={"4"} hidden={false}>
+          <Heading mt={"5"} ml={"3"}>
+            DASHBOARD
+          </Heading>
 
-        <Tabs.Root defaultValue={page} mt={"3"} onValueChange={(value) => handleClick(value)}>
-          <Tabs.List>
-            <Tabs.Trigger value="usuarios">
-              <Text size="3">Usuarios</Text>
-            </Tabs.Trigger>
-            <Tabs.Trigger value="maquinas">
-              <Text size="3">Máquinas</Text>
-            </Tabs.Trigger>
-            <Tabs.Trigger value="eventos">
-              <Text size="3">Eventos</Text>
-            </Tabs.Trigger>
-          </Tabs.List>
-        </Tabs.Root>
-        <Box>{children}</Box>
-      </Container>
+          <Tabs.Root
+            defaultValue={page}
+            mt={"3"}
+            onValueChange={(value) => handleClick(value)}
+          >
+            <Tabs.List>
+              <Tabs.Trigger value="usuarios">
+                <Text size="3">Usuarios</Text>
+              </Tabs.Trigger>
+              <Tabs.Trigger value="maquinas">
+                <Text size="3">Máquinas</Text>
+              </Tabs.Trigger>
+              <Tabs.Trigger value="eventos">
+                <Text size="3">Eventos</Text>
+              </Tabs.Trigger>
+            </Tabs.List>
+          </Tabs.Root>
+          <Box>{children}</Box>
+        </Container>
+      </MachinesContextProvider>
     </UsersContextProvider>
   );
 }
