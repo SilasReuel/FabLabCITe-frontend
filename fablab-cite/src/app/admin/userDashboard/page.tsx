@@ -30,7 +30,7 @@ export default function Page() {
               <Table.Cell>{user.email}</Table.Cell>
               <Table.Cell>{user.cpf}</Table.Cell>
               <Table.Cell>
-                {user.dataNascimento}
+                {user.data_nascimento}
               </Table.Cell>
               <Table.Cell>{user.tipo}</Table.Cell>
               <Table.Cell>

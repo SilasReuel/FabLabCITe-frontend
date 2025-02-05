@@ -104,7 +104,7 @@ export default function BtnUpdate(props: { user: User }) {
                 Data de nascimento
               </DataList.Label>
               <DataList.Value>
-                {new Date(user.dataNascimento).toLocaleDateString()}
+                {user.data_nascimento}
               </DataList.Value>
             </DataList.Item>
           </DataList.Root>

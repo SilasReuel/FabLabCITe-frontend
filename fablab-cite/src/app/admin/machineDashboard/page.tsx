@@ -1,6 +1,7 @@
 "use client"
 
 import BtnRemove from "@/components/btnRemove";
+import BtnUpdateMachine from "@/components/btnUpdateMachine";
 import { Machine } from "@/entities/machine";
 import { useMachines } from "@/hooks/useMachines";
 import { Container, Flex, Table } from "@radix-ui/themes";
@@ -30,6 +31,7 @@ export default function Page() {
               <Table.Cell>
                 <Flex gap="1">
                     <BtnRemove id={machine.id} type="machine" />  
+                    <BtnUpdateMachine machine={machine} />
                 </Flex>
               </Table.Cell>
             </Table.Row>
