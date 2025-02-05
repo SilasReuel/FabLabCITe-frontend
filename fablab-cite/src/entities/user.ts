@@ -6,6 +6,6 @@ export interface User {
     senha: string,
     email: string,
     cpf: string,
-    dataNascimento: string,
+    data_nascimento: string,
     tipo: userType
 }

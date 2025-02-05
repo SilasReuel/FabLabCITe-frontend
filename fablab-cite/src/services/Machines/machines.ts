@@ -29,7 +29,7 @@ export const MachinesService = {
     },
 
     async updateMachine(id: number, body: Partial<Machine>) {
-        const response = await fetch(`${apiUrl}/machine/${id}`, {
+        const response = await fetch(`${apiUrl}/maquinas/${id}`, {
             method: "PATCH",
             headers: {"content-type": "application/json"},
             body: JSON.stringify(body)
