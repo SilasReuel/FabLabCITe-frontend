@@ -1,7 +1,7 @@
 export interface Machine{
     id: number;
     apelido: string;
-    nomeTecnico: string;
+    nome_tecnico: string;
     imagem: string;
     descricao: string;
 }

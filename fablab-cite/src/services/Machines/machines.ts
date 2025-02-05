@@ -5,7 +5,7 @@ const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 export const MachinesService = {
     async fetchMachines(): Promise<Machine[]> {
         try {
-            const response = await fetch(`${apiUrl}/maquinas`)
+            const response = await fetch(`${apiUrl}maquinas`)
 
             if (!response.ok) {
                 throw new Error("Failed to fetch machines")

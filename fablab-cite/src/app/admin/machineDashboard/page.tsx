@@ -24,7 +24,7 @@ export default function Page() {
           {machines.map((machine: Machine) => (
             <Table.Row key={machine.id}>
               <Table.Cell>{machine.apelido}</Table.Cell>
-              <Table.Cell>{machine.nomeTecnico}</Table.Cell>
+              <Table.Cell>{machine.nome_tecnico}</Table.Cell>
               <Table.Cell>{machine.descricao}</Table.Cell>
               <Table.Cell>{machine.imagem}</Table.Cell>
               <Table.Cell>
