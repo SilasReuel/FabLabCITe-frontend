@@ -1,9 +1,8 @@
 "use client";
 
-import { useRouter } from "next/navigation"; // Importando useRouter
-import { Box, Container, Heading, Tabs, Text } from "@radix-ui/themes";
+import { Box, Container, Heading, TabNav } from "@radix-ui/themes";
 import { UsersContextProvider } from "@/contexts/UsersContext";
-import { useState } from "react";
+import { usePathname } from "next/navigation";
 import { MachinesContextProvider } from "@/contexts/MachinesContext";
 
 export default function Layout({
@@ -11,25 +10,8 @@ export default function Layout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const router = useRouter(); // Instanciando useRouter
 
-  const [page, setPage] = useState("usuarios");
-
-  const handleClick = (value: string) => {
-    if (value === "usuarios") {
-      setPage("usuarios");
-      // Redireciona para a página de usuários
-      router.push("/admin/userDashboard/");
-    } else if (value === "maquinas") {
-      setPage("maquinas");
-      // Redireciona para a página de máquinas
-      router.push("/admin/machineDashboard/");
-    } else if (value === "eventos") {
-      setPage("eventos");
-      // Redireciona para a página de eventos
-      router.push("/admin/eventDashboard/");
-    }
-  };
+  const pathname = usePathname();
 
   return (
     <UsersContextProvider>
@@ -39,23 +21,13 @@ export default function Layout({
             DASHBOARD
           </Heading>
 
-          <Tabs.Root
-            defaultValue={page}
-            mt={"3"}
-            onValueChange={(value) => handleClick(value)}
-          >
-            <Tabs.List>
-              <Tabs.Trigger value="usuarios">
-                <Text size="3">Usuarios</Text>
-              </Tabs.Trigger>
-              <Tabs.Trigger value="maquinas">
-                <Text size="3">Máquinas</Text>
-              </Tabs.Trigger>
-              <Tabs.Trigger value="eventos">
-                <Text size="3">Eventos</Text>
-              </Tabs.Trigger>
-            </Tabs.List>
-          </Tabs.Root>
+          <TabNav.Root>
+            <TabNav.Link href="./userDashboard" active={pathname === "/admin/userDashboard"}>
+              Usuários
+            </TabNav.Link>
+            <TabNav.Link href="./machineDashboard" active={pathname === "/admin/machineDashboard"}>Máquinas</TabNav.Link>
+            <TabNav.Link href="./eventDashboard" active={pathname === "/admin/eventDashboard"}>Eventos</TabNav.Link>
+          </TabNav.Root>
           <Box>{children}</Box>
         </Container>
       </MachinesContextProvider>

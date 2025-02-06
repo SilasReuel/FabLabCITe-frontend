@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function Home() {
   return (
     <>
-      <Link href="./admin/userDashboard">Dashboard</Link>
+      <Link href="/admin/userDashboard">Dashboard</Link>
     </>
   );
 }
